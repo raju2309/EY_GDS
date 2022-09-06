@@ -1,0 +1,8 @@
+﻿Winner
+--------------------
+Aleksandar Solzhenit
+
+(1 row affected)
+
+
+Completion time: 2022-09-06T16:49:28.9639239+05:30

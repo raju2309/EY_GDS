@@ -1,0 +1,8 @@
+﻿Years       Subjects
+----------- --------------------
+1971        Physics
+
+(1 row affected)
+
+
+Completion time: 2022-09-06T17:01:18.7204572+05:30
