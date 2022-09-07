@@ -1,0 +1,9 @@
+﻿ord_no      purch_amt   ord_date    customer_id salesman_id cust_name
+----------- ----------- ----------- ----------- ----------- --------------------------------------------------
+70004       110         1987        3009        5003        geoff camero
+70011       75          1987        3003        5007        jozy altidor
+
+(2 rows affected)
+
+
+Completion time: 2022-09-07T16:51:28.3201367+05:30

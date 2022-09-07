@@ -1,0 +1,11 @@
+﻿salesman_id name                                               city                                               commission
+----------- -------------------------------------------------- -------------------------------------------------- -----------
+5002        nail knite                                         paris                                              0
+5005        pit alex                                           london                                             0
+5006        mc lyon                                            paris                                              0
+5003        lauson hen                                         NULL                                               0
+
+(4 rows affected)
+
+
+Completion time: 2022-09-07T17:11:54.0917802+05:30

@@ -1,0 +1,11 @@
+﻿salesman_id name                                               city                                               commission
+----------- -------------------------------------------------- -------------------------------------------------- -----------
+5001        james hoog                                         new york                                           0
+5002        nail knite                                         paris                                              0
+5005        pit alex                                           london                                             0
+5006        mc lyon                                            paris                                              0
+
+(4 rows affected)
+
+
+Completion time: 2022-09-07T17:19:07.7755155+05:30
