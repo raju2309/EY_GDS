@@ -53,23 +53,29 @@ INSERT INTO Title23
  (006, 'Lead', '2016-06-11 00:00:00'),
  (003, 'Lead', '2016-06-11 00:00:00');
 
- /* Question 1*/
+ /* Question 1. Write an SQL query to fetch the list of employees with the same salary.*/
  Select * from Worker23 where SALARY in (Select SALARY from Worker23 w where Worker23.WORKER_ID  <> w.WORKER_ID)
- /* Question 2*/
+ 
+ /* Question 2.Write an SQL query to show the second highest salary from a table*/
  Select * from Worker23 where WORKER_ID in (Select WORKER_ID from WORKER23 where SALARY = (Select max(SALARY) from WORKER23  where SALARY < (Select max(SALARY) from WORKER23)))
-  /* Question 3*/
+  
+ /* Question 3.Write an SQL query to fetch the first 50% records from a table.*/
  Select Top 50 percent * from WORKER23
-  /* Question 4*/
-   
+ 
+ /* Question 4.Write an SQL query to show all departments along with the number of people in there.*/
  Select DEPARTMENT, count(*) as COUNT from WORKER23 group by DEPARTMENT
- /* Question 5 */
+ 
+ /* Question 5.Write an SQL query to fetch departments along with the total salaries paid for each of them. */
  Select DEPARTMENT , SUM(SALARY) as TOTAL_SALARIES from WORKER23 group by DEPARTMENT
 
- /* Question 6 */
+ /* Question 6.Write an SQL query to fetch the names of workers who earn the highest salary. */
  Select FIRST_NAME, SALARY from WORKER23 where SALARY = (Select max(SALARY) from WORKER23)
- /* Question 7 */
+ 
+ /* Question 7.Write an SQL query to show the last record from a table */
  Select Top 1 * from WORKER23 order by WORKER_ID DESC
-  /* Question 8 */
-  Select distinct SALARY from WORKER23 w where  3 >= (Select count(DISTINCT SALARY ) from WORKER23 w1 where w1.SALARY <= w.SALARY ) order by w.SALARY DESC
-  /* Question 9 */
-  Select FIRST_NAME , SALARY , DEPARTMENT from WORKER23 where SALARY in (Select max(SALARY) from WORKER23 group by DEPARTMENT)
+ 
+ /* Question 8.Write an SQL query to fetch three min salaries from a table */
+ Select distinct SALARY from WORKER23 w where  3 >= (Select count(DISTINCT SALARY ) from WORKER23 w1 where w1.SALARY <= w.SALARY ) order by w.SALARY DESC
+ 
+ /* Question 9.Write an SQL query to print the name of employees having the highest salary in each department */
+ Select FIRST_NAME , SALARY , DEPARTMENT from WORKER23 where SALARY in (Select max(SALARY) from WORKER23 group by DEPARTMENT)
