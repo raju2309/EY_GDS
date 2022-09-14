@@ -1,4 +1,10 @@
-/* EXCERCISE - 2 SUB QUERY */
+/* EXCERCISE - 2 SUB QUERY 
+ 
+Modify your query from the first problem, such that the top three purchase order amounts are returned, regardless of how many records are returned per Vendor Id. 
+In other words, if there are multiple orders with the same total due amount, all should be returned as long as the total due amount for these orders is one of the top three. 
+Ultimately, you should see three distinct total due amounts (i.e., the top three) for each group of like Vendor Ids. However, there could be multiple records for each of these amounts
+
+*/
 
 select * from Purchasing.PurchaseOrderHeader;
 
@@ -10,9 +16,19 @@ Top3 = ROW_NUMBER() over (Order by TotalDue DESC)
 from Purchasing.PurchaseOrderHeader)
 select * from POH where MostExpOrder<=3;
 
+ 
+ 
+/* Exercise - 1.Create a query that displays all rows and the following columns from the AdventureWorks2019.HumanResources.Employee table: 
 
+BusinessEntityID 
 
-/* Scalar Excercise 1 Using subquery */
+JobTitle 
+
+VacationHours 
+
+Also include a derived column called "MaxVacationHours" that returns the maximum amount of vacation hours for any one employee, in any given row. 
+*/
+/* Using subquery */
 
 select BusinessEntityID, JobTitle, VacationHours,
 (
