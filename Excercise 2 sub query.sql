@@ -1,25 +1,18 @@
-/*EXCERCISE2 SUB QUERY*/
+/* EXCERCISE - 2 SUB QUERY */
 
 select * from Purchasing.PurchaseOrderHeader;
 
-with P as
+with POH as
 (
 select DISTINCT Top 3 VendorID, PurchaseOrderID, OrderDate, TotalDue, TaxAmt, Freight,
 MostExpOrder = ROW_NUMBER() over( Order by TotalDue DESC),
 Top3 = ROW_NUMBER() over (Order by TotalDue DESC)
 from Purchasing.PurchaseOrderHeader)
-select * from P where MostExpOrder<=3;
+select * from POH where MostExpOrder<=3;
 
-/* Scalar Excercise 1 using CTE*/
 
-with P as
-( select BusinessEntityID, JobTitle, VacationHours,
-MaxVacationHours = MAX(VacationHours) over (order by VacationHours desc)
-from HumanResources.Employee
-)
-select * from P
 
-/* Scalar Excercise 1 Using subquery*/
+/* Scalar Excercise 1 Using subquery */
 
 select BusinessEntityID, JobTitle, VacationHours,
 (
@@ -42,8 +35,8 @@ from HumanResources.Employee
 /*Refine your output with a criterion in the
 WHERE clause that filters out any employees
 whose vacation hours are less then 80% of the maximum amount of vacation hours for any one employee.
-In other words, return only employees who have at least 80% as much vacation time as the employee with the most vacation time*/ 
-Hint: The query should return 60 rows. 
+In other words, return only employees who have at least 80% as much vacation time as the employee with the most vacation time 
+Hint: The query should return 60 rows. */ 
 
 select BusinessEntityID, JobTitle, VacationHours,
 VacationHours * 100.00/(select MAX(VacationHours) 
